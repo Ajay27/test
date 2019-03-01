@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20180131 14:55:19.273" generator="Robot 3.0.2rc1 (Python 2.7.14 on win32)">
+<suite id="s1" name="Results &amp; Test Users Maintenance">
+<suite source="C:\Users\krparama\Documents\PycharmProjects\prototype\results" id="s1-s1" name="Results">
+<status status="PASS" endtime="20180131 14:55:19.320" starttime="20180131 14:55:19.320"></status>
+</suite>
+<suite source="C:\Users\krparama\Documents\PycharmProjects\prototype\tests\test_users_maintenance.robot" id="s1-s2" name="Test Users Maintenance">
+<kw type="setup" name="Run Keywords" library="BuiltIn">
+<doc>Executes all the given keywords in a sequence.</doc>
+<arguments>
+<arg>Open sdp</arg>
+<arg>setup_add_new_users_maintenance</arg>
+</arguments>
+<kw name="Open sdp">
+<doc>Login to the application and the driver instance is made as the global variable</doc>
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>${url}</arg>
+<arg>ff</arg>
+</arguments>
+<msg timestamp="20180131 14:55:19.710" level="INFO">Opening browser 'ff' to base url 'https://10.92.10.215/sdpgui/index.php'</msg>
+<status status="PASS" endtime="20180131 14:55:23.677" starttime="20180131 14:55:19.710"></status>
+</kw>
+<kw name="Sdp Login" library="sdputils">
+<doc>This method can be used for login into sdp system. If username and password</doc>
+<assign>
+<var>${driver}</var>
+</assign>
+<msg timestamp="20180131 14:55:26.677" level="INFO">{'locator': 'id', 'id': 'user'}</msg>
+<msg timestamp="20180131 14:55:26.678" level="INFO">sdp</msg>
+<msg timestamp="20180131 14:55:26.837" level="INFO">{'locator': 'id', 'id': 'password'}</msg>
+<msg timestamp="20180131 14:55:26.837" level="INFO">sdp</msg>
+<msg timestamp="20180131 14:55:35.506" level="INFO">${driver} = &lt;selenium.webdriver.firefox.webdriver.WebDriver (session="cc7bbb58-8777-4eb0-a7b6-288fcdd454dc")&gt;</msg>
+<status status="PASS" endtime="20180131 14:55:35.506" starttime="20180131 14:55:23.677"></status>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${driver}</arg>
+</arguments>
+<msg timestamp="20180131 14:55:35.507" level="INFO">${driver} = &lt;selenium.webdriver.firefox.webdriver.WebDriver (session="cc7bbb58-8777-4eb0-a7b6-288fcdd454dc")&gt;</msg>
+<status status="PASS" endtime="20180131 14:55:35.507" starttime="20180131 14:55:35.507"></status>
+</kw>
+<status status="PASS" endtime="20180131 14:55:35.507" starttime="20180131 14:55:19.710"></status>
+</kw>
+<kw name="setup_add_new_users_maintenance">
+<kw name="Get Library Instance" library="BuiltIn">
+<doc>Returns the currently active instance of the specified test library.</doc>
+<arguments>
+<arg>sdppo</arg>
+</arguments>
+<assign>
+<var>${SDP}</var>
+</assign>
+<msg timestamp="20180131 14:55:35.508" level="INFO">${SDP} = &lt;module 'sdppo' from 'C:\Users\krparama\Documents\PycharmProjects\prototype\VBO_Objects\sdppo.pyc'&gt;</msg>
+<status status="PASS" endtime="20180131 14:55:35.508" starttime="20180131 14:55:35.508"></status>
+</kw>
+<kw name="Open Page" library="sdputils">
+<arguments>
+<arg>${driver}</arg>
+<arg>${SDP.users_maintenance}</arg>
+</arguments>
+<status status="PASS" endtime="20180131 14:55:38.819" starttime="20180131 14:55:35.508"></status>
+</kw>
+<kw name="Get Library Instance" library="BuiltIn">
+<doc>Returns the currently active instance of the specified test library.</doc>
+<arguments>
+<arg>usersmaintenancePage</arg>
+</arguments>
+<assign>
+<var>${user}</var>
+</assign>
+<msg timestamp="20180131 14:55:38.819" level="INFO">${user} = &lt;module 'usersmaintenancePage' from 'C:\Users\krparama\Documents\PycharmProjects\prototype\VBO_Objects\usersmaintenancePage.pyc'&gt;</msg>
+<status status="PASS" endtime="20180131 14:55:38.819" starttime="20180131 14:55:38.819"></status>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${user}</arg>
+</arguments>
+<msg timestamp="20180131 14:55:38.819" level="INFO">${user} = &lt;module 'usersmaintenancePage' from 'C:\Users\krparama\Documents\PycharmProjects\prototype\VBO_Objects\usersmaintenancePage.pyc'&gt;</msg>
+<status status="PASS" endtime="20180131 14:55:38.819" starttime="20180131 14:55:38.819"></status>
+</kw>
+<status status="PASS" endtime="20180131 14:55:38.819" starttime="20180131 14:55:35.507"></status>
+</kw>
+<status status="PASS" endtime="20180131 14:55:38.819" starttime="20180131 14:55:19.695"></status>
+</kw>
+<test id="s1-s2-t1" name="validate area name with invalid data">
+<kw type="setup" name="create_users_maintainence">
+<kw name="Create New User Maint" library="lib_files">
+<arguments>
+<arg>${driver}</arg>
+</arguments>
+<msg timestamp="20180131 14:55:41.829" level="INFO">{'locator': 'id', 'id': 'SELOPTION_USERS', 'value': 'Create new User'}</msg>
+<msg timestamp="20180131 14:55:41.829" level="INFO">None</msg>
+<msg timestamp="20180131 14:55:41.970" level="INFO">{'locator': 'id', 'error_message': 'Error: The User Password can not be empty', 'id': 'PASSWORD_USERS_0', 'value': 'check'}</msg>
+<msg timestamp="20180131 14:55:41.970" level="INFO">None</msg>
+<msg timestamp="20180131 14:55:42.017" level="FAIL">InvalidElementStateException: Message: Element is disabled and so may not be used for actions
+Stacktrace:
+    at fxdriver.preconditions.enabled (file:///c:/users/krparama/appdata/local/temp/tmpgj3dsk/webdriver-py-profilecopy/extensions/fxdriver@googlecode.com/components/command-processor.js:10098)
+    at DelayedCommand.prototype.checkPreconditions_ (file:///c:/users/krparama/appdata/local/temp/tmpgj3dsk/webdriver-py-profilecopy/extensions/fxdriver@googlecode.com/components/command-processor.js:12644)
+    at DelayedCommand.prototype.executeInternal_/h (file:///c:/users/krparama/appdata/local/temp/tmpgj3dsk/webdriver-py-profilecopy/extensions/fxdriver@googlecode.com/components/command-processor.js:12661)
+    at DelayedCommand.prototype.executeInternal_ (file:///c:/users/krparama/appdata/local/temp/tmpgj3dsk/webdriver-py-profilecopy/extensions/fxdriver@googlecode.com/components/command-processor.js:12666)
+    at DelayedCommand.prototype.execute/&lt; (file:///c:/users/krparama/appdata/local/temp/tmpgj3dsk/webdriver-py-profilecopy/extensions/fxdriver@googlecode.com/components/command-processor.js:12608)</msg>
+<status status="FAIL" endtime="20180131 14:55:42.017" starttime="20180131 14:55:38.819"></status>
+</kw>
+<status status="FAIL" endtime="20180131 14:55:42.017" starttime="20180131 14:55:38.819"></status>
+</kw>
+<kw type="teardown" name="close">
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks a button identified by `locator`.</doc>
+<arguments>
+<arg>xpath = //input[@value='Cancel']</arg>
+</arguments>
+<msg timestamp="20180131 14:55:42.017" level="INFO">Clicking button 'xpath = //input[@value='Cancel']'.</msg>
+<status status="PASS" endtime="20180131 14:55:42.126" starttime="20180131 14:55:42.017"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20180131 14:55:44.138" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" endtime="20180131 14:55:44.138" starttime="20180131 14:55:42.126"></status>
+</kw>
+<status status="PASS" endtime="20180131 14:55:44.138" starttime="20180131 14:55:42.017"></status>
+</kw>
+<tags>
+<tag>usersmaintenance</tag>
+</tags>
+<status status="FAIL" endtime="20180131 14:55:44.138" critical="yes" starttime="20180131 14:55:38.819">Setup failed:
+InvalidElementStateException: Message: Element is disabled and so may not be used for actions
+Stacktrace:
+    at fxdriver.preconditions.enabled (file:///c:/users/krparama/appdata/local/temp/tmpgj3dsk/webdriver-py-profilecopy/extensions/fxdriver@googlecode.com/components/command-processor.js:10098)
+    at DelayedCommand.prototype.checkPreconditions_ (file:///c:/users/krparama/appdata/local/temp/tmpgj3dsk/webdriver-py-profilecopy/extensions/fxdriver@googlecode.com/components/command-processor.js:12644)
+    at DelayedCommand.prototype.executeInternal_/h (file:///c:/users/krparama/appdata/local/temp/tmpgj3dsk/webdriver-py-profilecopy/extensions/fxdriver@googlecode.com/components/command-processor.js:12661)
+    at DelayedCommand.prototype.executeInternal_ (file:///c:/users/krparama/appdata/local/temp/tmpgj3dsk/webdriver-py-profilecopy/extensions/fxdriver@googlecode.com/components/command-processor.js:12666)
+    at DelayedCommand.prototype.execute/&lt; (file:///c:/users/krparama/appdata/local/temp/tmpgj3dsk/webdriver-py-profilecopy/extensions/fxdriver@googlecode.com/components/command-processor.js:12608)</status>
+</test>
+<status status="FAIL" endtime="20180131 14:55:44.138" starttime="20180131 14:55:19.320"></status>
+</suite>
+<status status="FAIL" endtime="20180131 14:55:44.153" starttime="20180131 14:55:19.273"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="1" pass="0">Critical Tests</stat>
+<stat fail="1" pass="0">All Tests</stat>
+</total>
+<tag>
+<stat fail="1" pass="0">usersmaintenance</stat>
+</tag>
+<suite>
+<stat fail="1" id="s1" name="Results &amp; Test Users Maintenance" pass="0">Results &amp; Test Users Maintenance</stat>
+<stat fail="0" id="s1-s1" name="Results" pass="0">Results &amp; Test Users Maintenance.Results</stat>
+<stat fail="1" id="s1-s2" name="Test Users Maintenance" pass="0">Results &amp; Test Users Maintenance.Test Users Maintenance</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20180131 14:55:19.601" level="WARN">Imported library 'C:\Users\krparama\Documents\PycharmProjects\prototype\VBO_Objects\sdppo.py' contains no keywords.</msg>
+<msg timestamp="20180131 14:55:19.601" level="WARN">Imported library 'C:\Users\krparama\Documents\PycharmProjects\prototype\VBO_Objects\usersmaintenancePage.py' contains no keywords.</msg>
+</errors>
+</robot>

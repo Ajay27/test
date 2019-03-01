@@ -1,0 +1,7 @@
+url = "https://10.92.10.156/sdpgui/index.php"
+username = "sdp"
+password = "sdp"
+dbpassword = "admin"
+dbuser = "root"
+dbhost = "10.92.10.156"
+db = "sdpdb"

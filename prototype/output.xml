@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generated="20190207 14:42:38.237" generator="Robot 3.0.2rc1 (Python 2.7.14 on win32)">
-<suite source="C:\prototype\Tests" id="s1" name="Tests">
+<robot generated="20190304 12:01:50.209" generator="Robot 3.0.2 (Python 2.7.5 on linux2)">
+<suite source="/usr/bin/prototype/Tests" id="s1" name="Tests">
 <kw type="setup" name="Open sdp">
 <doc>Login to the application and the driver instance is made as the global variable</doc>
 <kw name="Open Browser" library="Selenium2Library">
@@ -9,229 +9,45 @@
 <arg>${url}</arg>
 <arg>ff</arg>
 </arguments>
-<msg timestamp="20190207 14:42:38.550" level="INFO">Opening browser 'ff' to base url 'https://10.92.10.156/sdpgui/index.php'</msg>
-<status status="PASS" endtime="20190207 14:42:49.358" starttime="20190207 14:42:38.550"></status>
+<msg timestamp="20190304 12:01:50.682" level="INFO">Opening browser 'ff' to base url 'https://10.92.10.156/sdpgui/index.php'</msg>
+<msg timestamp="20190304 12:01:50.739" level="INFO">Starting new HTTP connection (1): 127.0.0.1</msg>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20190304 12:02:51.091" level="FAIL">No browser is open</msg>
+<status status="FAIL" endtime="20190304 12:02:51.091" starttime="20190304 12:02:51.085"></status>
 </kw>
-<kw name="Sdp Login" library="sdputils">
-<doc>This method can be used for login into sdp system. If username and password</doc>
-<assign>
-<var>${driver}</var>
-</assign>
-<msg timestamp="20190207 14:42:52.365" level="INFO">{'locator': 'id', 'id': 'user'}</msg>
-<msg timestamp="20190207 14:42:52.367" level="INFO">sdp</msg>
-<msg timestamp="20190207 14:42:52.427" level="INFO">{'locator': 'id', 'id': 'password'}</msg>
-<msg timestamp="20190207 14:42:52.427" level="INFO">sdp</msg>
-<msg timestamp="20190207 14:43:03.417" level="INFO">${driver} = &lt;selenium.webdriver.firefox.webdriver.WebDriver (session="390067b0-db38-49a9-9b53-49158b0223a5")&gt;</msg>
-<status status="PASS" endtime="20190207 14:43:03.417" starttime="20190207 14:42:49.360"></status>
-</kw>
-<kw name="Set Global Variable" library="BuiltIn">
-<doc>Makes a variable available globally in all tests and suites.</doc>
-<arguments>
-<arg>${driver}</arg>
-</arguments>
-<msg timestamp="20190207 14:43:03.418" level="INFO">${driver} = &lt;selenium.webdriver.firefox.webdriver.WebDriver (session="390067b0-db38-49a9-9b53-49158b0223a5")&gt;</msg>
-<status status="PASS" endtime="20190207 14:43:03.422" starttime="20190207 14:43:03.418"></status>
-</kw>
-<status status="PASS" endtime="20190207 14:43:03.422" starttime="20190207 14:42:38.550"></status>
-</kw>
-<suite source="C:\prototype\Tests\test_host.robot" id="s1-s1" name="Test Host">
-<kw type="setup" name="setup_add_new_host">
-<kw name="Get Library Instance" library="BuiltIn">
-<doc>Returns the currently active instance of the specified test library.</doc>
-<arguments>
-<arg>sdppo</arg>
-</arguments>
-<assign>
-<var>${SDP}</var>
-</assign>
-<msg timestamp="20190207 14:43:03.617" level="INFO">${SDP} = &lt;module 'sdppo' from 'C:\prototype\VBO_Objects\sdppo.pyc'&gt;</msg>
-<status status="PASS" endtime="20190207 14:43:03.617" starttime="20190207 14:43:03.617"></status>
-</kw>
-<kw name="Open Page" library="sdputils">
-<arguments>
-<arg>${driver}</arg>
-<arg>${SDP.host}</arg>
-</arguments>
-<status status="PASS" endtime="20190207 14:43:07.270" starttime="20190207 14:43:03.618"></status>
-</kw>
-<kw name="Get Library Instance" library="BuiltIn">
-<doc>Returns the currently active instance of the specified test library.</doc>
-<arguments>
-<arg>hostPage</arg>
-</arguments>
-<assign>
-<var>${host}</var>
-</assign>
-<msg timestamp="20190207 14:43:07.271" level="INFO">${host} = &lt;module 'hostPage' from 'C:\prototype\VBO_Objects\hostPage.pyc'&gt;</msg>
-<status status="PASS" endtime="20190207 14:43:07.271" starttime="20190207 14:43:07.270"></status>
-</kw>
-<kw name="Set Global Variable" library="BuiltIn">
-<doc>Makes a variable available globally in all tests and suites.</doc>
-<arguments>
-<arg>${host}</arg>
-</arguments>
-<msg timestamp="20190207 14:43:07.272" level="INFO">${host} = &lt;module 'hostPage' from 'C:\prototype\VBO_Objects\hostPage.pyc'&gt;</msg>
-<status status="PASS" endtime="20190207 14:43:07.272" starttime="20190207 14:43:07.271"></status>
-</kw>
-<status status="PASS" endtime="20190207 14:43:07.272" starttime="20190207 14:43:03.616"></status>
-</kw>
-<test id="s1-s1-t1" name="sdp.1001">
-<kw type="for" name="${data} IN [ @{Invalid_name} ]">
-<kw type="foritem" name="${data} = {}name1">
-<kw name="validate_check">
-<arguments>
-<arg>${host.hostclass.network_name}</arg>
-<arg>${data}</arg>
-</arguments>
-<kw name="Log" library="BuiltIn">
-<doc>Logs the given message with the given level.</doc>
-<arguments>
-<arg>${field} ${data}</arg>
-</arguments>
-<msg timestamp="20190207 14:43:07.272" level="INFO">{'locator': 'id', 'error_message': "[Network Name] cannot be empty and cannot contain the following characters: \\ / `; &gt; &lt; {}() | ' '' % = +", 'id': 'NETWORK_0', 'value': 'Ingress-22'} {}name1</msg>
-<status status="PASS" endtime="20190207 14:43:07.272" starttime="20190207 14:43:07.272"></status>
-</kw>
-<kw name="Create New Host" library="lib_files">
-<arguments>
-<arg>${driver}</arg>
-</arguments>
-<msg timestamp="20190207 14:43:10.408" level="INFO">{'locator': 'id', 'error_message': "[Network Name] cannot be empty and cannot contain the following characters: \\ / `; &gt; &lt; {}() | ' '' % = +", 'id': 'NETWORK_0', 'value': 'Ingress-22'}</msg>
-<msg timestamp="20190207 14:43:10.408" level="INFO">None1</msg>
-<msg timestamp="20190207 14:43:10.493" level="INFO">{'locator': 'id', 'id': 'DEVICE_0', 'value': 'eth0'}</msg>
-<msg timestamp="20190207 14:43:10.494" level="INFO">None1</msg>
-<msg timestamp="20190207 14:43:10.528" level="INFO">{'locator': 'id', 'id': 'IP_0', 'value': '10.0.7.22'}</msg>
-<msg timestamp="20190207 14:43:10.528" level="INFO">None1</msg>
-<msg timestamp="20190207 14:43:10.557" level="INFO">{'locator': 'id', 'id': 'TYPE_NET_0', 'value': 'INGRESS'}</msg>
-<msg timestamp="20190207 14:43:10.557" level="INFO">None1</msg>
-<msg timestamp="20190207 14:43:11.056" level="INFO">{'locator': 'id', 'error_message': "[Network Name] cannot be empty and cannot contain the following characters: \\ / `; &gt; &lt; {}() | ' '' % = +", 'id': 'NETWORK_0', 'value': 'Egress-22'}</msg>
-<msg timestamp="20190207 14:43:11.056" level="INFO">None1</msg>
-<msg timestamp="20190207 14:43:11.098" level="INFO">{'locator': 'id', 'id': 'DEVICE_0', 'value': 'eth1'}</msg>
-<msg timestamp="20190207 14:43:11.098" level="INFO">None1</msg>
-<msg timestamp="20190207 14:43:11.126" level="INFO">{'locator': 'id', 'id': 'IP_0', 'value': '10.0.6.22'}</msg>
-<msg timestamp="20190207 14:43:11.126" level="INFO">None1</msg>
-<msg timestamp="20190207 14:43:11.161" level="INFO">{'locator': 'id', 'id': 'TYPE_NET_0', 'value': 'EGRESS'}</msg>
-<msg timestamp="20190207 14:43:11.161" level="INFO">None1</msg>
-<msg timestamp="20190207 14:43:11.707" level="INFO">{'locator': 'id', 'id': 'DEF_INGRESSINTF_0', 'value': 'eth0'}</msg>
-<msg timestamp="20190207 14:43:11.707" level="INFO">None1</msg>
-<msg timestamp="20190207 14:43:11.775" level="INFO">{'locator': 'id', 'id': 'DEF_EGRESSINTF_0', 'value': 'eth1'}</msg>
-<msg timestamp="20190207 14:43:11.778" level="INFO">None1</msg>
-<msg timestamp="20190207 14:43:11.840" level="INFO">{'locator': 'id', 'id': 'LIC_0', 'value': 'jdsgfgdsfsd'}</msg>
-<msg timestamp="20190207 14:43:11.840" level="INFO">None1</msg>
-<msg timestamp="20190207 14:43:22.459" level="INFO">{'locator': 'id', 'id': 'REW_0', 'value': 'rewrapper30'}</msg>
-<msg timestamp="20190207 14:43:22.459" level="INFO">None1</msg>
-<msg timestamp="20190207 14:43:22.522" level="INFO">{'locator': 'id', 'id': 'MON_0', 'value': 'monitor3.0'}</msg>
-<msg timestamp="20190207 14:43:22.522" level="INFO">None1</msg>
-<msg timestamp="20190207 14:43:22.560" level="INFO">{'locator': 'id', 'id': 'ADJ_0', 'value': 'manager-3.0'}</msg>
-<msg timestamp="20190207 14:43:22.560" level="INFO">None1</msg>
-<msg timestamp="20190207 14:43:22.584" level="INFO">{'locator': 'id', 'id': 'FLOW_0', 'value': 'flowshaper3.0'}</msg>
-<msg timestamp="20190207 14:43:22.585" level="INFO">None1</msg>
-<msg timestamp="20190207 14:43:22.608" level="INFO">{'locator': 'id', 'id': 'OS_0', 'value': 'os3.0'}</msg>
-<msg timestamp="20190207 14:43:22.608" level="INFO">None1</msg>
-<msg timestamp="20190207 14:43:26.902" level="INFO">{'locator': 'id', 'id': 'MONITOR_ADDR_0', 'value': '239.1.22.1'}</msg>
-<msg timestamp="20190207 14:43:26.902" level="INFO">None1</msg>
-<msg timestamp="20190207 14:43:27.028" level="INFO">{'locator': 'id', 'id': 'MONITOR_INTF_0', 'value': '10.0.6.22'}</msg>
-<msg timestamp="20190207 14:43:27.028" level="INFO">None1</msg>
-<status status="PASS" endtime="20190207 14:43:27.406" starttime="20190207 14:43:07.272"></status>
-</kw>
-<kw name="Validate" library="lib_files">
-<arguments>
-<arg>${driver}</arg>
-<arg>${field}</arg>
-<arg>${data}</arg>
-</arguments>
-<msg timestamp="20190207 14:43:27.410" level="INFO">{'locator': 'id', 'error_message': "[Network Name] cannot be empty and cannot contain the following characters: \\ / `; &gt; &lt; {}() | ' '' % = +", 'id': 'NETWORK_0', 'value': 'Ingress-22'}</msg>
-<msg timestamp="20190207 14:43:27.410" level="INFO">{}name1</msg>
-<msg timestamp="20190207 14:43:27.525" level="INFO">data is  {}name1</msg>
-<msg timestamp="20190207 14:43:27.532" level="FAIL">UnexpectedAlertPresentException: Alert Text: None
-Message: Dismissed user prompt dialog: Duplicate entry APPLIANCE for key NAME
+<msg timestamp="20190304 12:02:51.092" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No browser is open</msg>
+<msg timestamp="20190304 12:02:51.118" level="FAIL">WebDriverException: Message: connection refused
 </msg>
-<status status="FAIL" endtime="20190207 14:43:27.533" starttime="20190207 14:43:27.408"></status>
+<status status="FAIL" endtime="20190304 12:02:51.118" starttime="20190304 12:01:50.681"></status>
 </kw>
-<status status="FAIL" endtime="20190207 14:43:27.533" starttime="20190207 14:43:07.272"></status>
+<status status="FAIL" endtime="20190304 12:02:51.120" starttime="20190304 12:01:50.680"></status>
 </kw>
-<status status="FAIL" endtime="20190207 14:43:27.535" starttime="20190207 14:43:07.272"></status>
-</kw>
-<kw type="foritem" name="${data} = %fjafaj">
-<kw name="validate_check">
-<arguments>
-<arg>${host.hostclass.network_name}</arg>
-<arg>${data}</arg>
-</arguments>
-<kw name="Log" library="BuiltIn">
-<doc>Logs the given message with the given level.</doc>
-<arguments>
-<arg>${field} ${data}</arg>
-</arguments>
-<msg timestamp="20190207 14:43:27.537" level="INFO">{'locator': 'id', 'error_message': "[Network Name] cannot be empty and cannot contain the following characters: \\ / `; &gt; &lt; {}() | ' '' % = +", 'id': 'NETWORK_0', 'value': 'Ingress-22'} %fjafaj</msg>
-<status status="PASS" endtime="20190207 14:43:27.537" starttime="20190207 14:43:27.536"></status>
-</kw>
-<kw name="Create New Host" library="lib_files">
-<arguments>
-<arg>${driver}</arg>
-</arguments>
-<msg timestamp="20190207 14:43:27.546" level="FAIL">NoSuchElementException: Message: Unable to locate element: //input[@value='Add new Host']
-</msg>
-<status status="FAIL" endtime="20190207 14:43:27.546" starttime="20190207 14:43:27.537"></status>
-</kw>
-<status status="FAIL" endtime="20190207 14:43:27.546" starttime="20190207 14:43:27.535"></status>
-</kw>
-<status status="FAIL" endtime="20190207 14:43:27.546" starttime="20190207 14:43:27.535"></status>
-</kw>
-<kw type="foritem" name="${data} = =cajkvab'">
-<kw name="validate_check">
-<arguments>
-<arg>${host.hostclass.network_name}</arg>
-<arg>${data}</arg>
-</arguments>
-<kw name="Log" library="BuiltIn">
-<doc>Logs the given message with the given level.</doc>
-<arguments>
-<arg>${field} ${data}</arg>
-</arguments>
-<msg timestamp="20190207 14:43:27.547" level="INFO">{'locator': 'id', 'error_message': "[Network Name] cannot be empty and cannot contain the following characters: \\ / `; &gt; &lt; {}() | ' '' % = +", 'id': 'NETWORK_0', 'value': 'Ingress-22'} =cajkvab'</msg>
-<status status="PASS" endtime="20190207 14:43:27.547" starttime="20190207 14:43:27.547"></status>
-</kw>
-<kw name="Create New Host" library="lib_files">
-<arguments>
-<arg>${driver}</arg>
-</arguments>
-<msg timestamp="20190207 14:43:27.558" level="FAIL">NoSuchElementException: Message: Unable to locate element: //input[@value='Add new Host']
-</msg>
-<status status="FAIL" endtime="20190207 14:43:27.558" starttime="20190207 14:43:27.548"></status>
-</kw>
-<status status="FAIL" endtime="20190207 14:43:27.558" starttime="20190207 14:43:27.546"></status>
-</kw>
-<status status="FAIL" endtime="20190207 14:43:27.558" starttime="20190207 14:43:27.546"></status>
-</kw>
-<status status="FAIL" endtime="20190207 14:43:27.558" starttime="20190207 14:43:07.272"></status>
-</kw>
+<suite source="/usr/bin/prototype/Tests/test_channel.robot" id="s1-s1" name="Test Channel">
+<test id="s1-s1-t1" name="sdp.795">
 <tags>
-<tag>Host</tag>
+<tag>channel</tag>
 </tags>
-<status status="FAIL" endtime="20190207 14:43:27.559" critical="yes" starttime="20190207 14:43:07.272">Several failures occurred:
-
-1) UnexpectedAlertPresentException: Alert Text: None
-Message: Dismissed user prompt dialog: Duplicate entry APPLIANCE for key NAME
-
-
-2) NoSuchElementException: Message: Unable to locate element: //input[@value='Add new Host']
-
-
-3) NoSuchElementException: Message: Unable to locate element: //input[@value='Add new Host']
+<status status="FAIL" endtime="20190304 12:02:51.123" critical="yes" starttime="20190304 12:02:51.122">Parent suite setup failed:
+WebDriverException: Message: connection refused
 </status>
 </test>
-<status status="FAIL" endtime="20190207 14:43:27.561" starttime="20190207 14:43:03.423"></status>
+<status status="FAIL" endtime="20190304 12:02:51.124" starttime="20190304 12:02:51.120">Parent suite setup failed:
+WebDriverException: Message: connection refused
+</status>
 </suite>
 <kw type="teardown" name="close sdp">
 <doc>Closes the sdp application after the process is over.</doc>
 <kw name="Close Browser" library="Selenium2Library">
 <doc>Closes the current browser.</doc>
-<status status="PASS" endtime="20190207 14:43:28.851" starttime="20190207 14:43:27.563"></status>
+<status status="PASS" endtime="20190304 12:02:51.128" starttime="20190304 12:02:51.127"></status>
 </kw>
-<status status="PASS" endtime="20190207 14:43:28.851" starttime="20190207 14:43:27.563"></status>
+<status status="PASS" endtime="20190304 12:02:51.128" starttime="20190304 12:02:51.127"></status>
 </kw>
 <doc>This suite tests the SDP GUI</doc>
-<status status="FAIL" endtime="20190207 14:43:28.851" starttime="20190207 14:42:38.240"></status>
+<status status="FAIL" endtime="20190304 12:02:51.128" starttime="20190304 12:01:50.212">Suite setup failed:
+WebDriverException: Message: connection refused
+</status>
 </suite>
 <statistics>
 <total>
@@ -239,15 +55,14 @@ Message: Dismissed user prompt dialog: Duplicate entry APPLIANCE for key NAME
 <stat fail="1" pass="0">All Tests</stat>
 </total>
 <tag>
-<stat fail="1" pass="0">Host</stat>
+<stat fail="1" pass="0">channel</stat>
 </tag>
 <suite>
 <stat fail="1" id="s1" name="Tests" pass="0">Tests</stat>
-<stat fail="1" id="s1-s1" name="Test Host" pass="0">Tests.Test Host</stat>
+<stat fail="1" id="s1-s1" name="Test Channel" pass="0">Tests.Test Channel</stat>
 </suite>
 </statistics>
 <errors>
-<msg timestamp="20190207 14:43:03.591" level="WARN">Imported library 'C:\prototype\VBO_Objects\sdppo.py' contains no keywords.</msg>
-<msg timestamp="20190207 14:43:03.605" level="WARN">Imported library 'C:\prototype\VBO_Objects\hostPage.py' contains no keywords.</msg>
+<msg timestamp="20190304 12:02:51.092" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No browser is open</msg>
 </errors>
 </robot>

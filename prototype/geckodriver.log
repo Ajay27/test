@@ -1,20 +1,21 @@
-1549530761765	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\ajayth\\AppData\\Local\\Temp\\rust_mozprofile.7ehjWEJ61zsQ"
-1549530762268	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid host permission: resource://pdf.js/
-1549530762268	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid host permission: about:reader*
-1549530763949	Marionette	INFO	Listening on port 56693
-1549530764072	Marionette	WARN	TLS certificate errors will be ignored for this session
-1549530783661	Marionette	WARN	TimedPromise timed out after 0 ms: stacktrace:
-bail@chrome://marionette/content/sync.js:196:64
-1549530807568	Marionette	INFO	Stopped listening on port 56693
-[Parent 11328, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
-[Child 19476, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
-[Child 19476, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_chann[Parent 11328, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
-[Child 3256, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
-[Child 3[GPU 19
+1551442119345	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\ajayth\\AppData\\Local\\Temp\\rust_mozprofile.wYWaSLiegUvO"
+1551442120483	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid host permission: resource://pdf.js/
+1551442120483	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid host permission: about:reader*
+1551442123162	Marionette	INFO	Listening on port 60757
+1551442123261	Marionette	WARN	TLS certificate errors will be ignored for this session
+1551442145102	Marionette	INFO	Stopped listening on port 60757
+[Child 25380, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+[Child 25380, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+[Child 2252, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+[Child 2252, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/bui[Parent 25712, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+[Child 27484, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+[Child 27484, Chro[GPU 9396, Chrome_Chi
 ###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
 
-276
+
 ###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+cv
 
 ogram%20Files%20(x86)/Mozilla%20Firefox/omni.ja!/components/nsPrompter.js:507:5
 openPrompt@jar:file:///C:/Program%20Files%20(x86)/Mozilla%20Firefox/omni.ja!/components/nsPrompter.js:560:13
@@ -500,3 +501,14 @@ G	Received DOM event "pagehide" for "https://10.92.10.156/sdpgui/html/center.php
 
 ###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
 
+1551679629926	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.u8vJoz3vuaHZ"
+1551679631674	Marionette	INFO	Listening on port 2828
+1551679669196	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.uK923TTtAVE9"
+1551679670316	Marionette	INFO	Listening on port 2828
+1551680136115	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.8cNvJW5zJrPG"
+1551680187834	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.Rz26M6xx8nUW"
+1551680188612	Marionette	INFO	Listening on port 2828
+1551680887936	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.lOj2aTskIj8G"
+1551680888776	Marionette	INFO	Listening on port 2828
+1551681110946	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.nkZhiqj7FCPZ"
+1551681113402	Marionette	INFO	Listening on port 2828
